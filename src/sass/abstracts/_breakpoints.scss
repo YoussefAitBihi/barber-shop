@@ -1,0 +1,9 @@
+$mobile: 40em;
+$tablet: 60em;
+$desktop: 70em;
+
+$breakpoints: (
+  mobile: $mobile,
+  tablet: $tablet,
+  desktop: $desktop,
+);

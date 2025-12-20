@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+@each $fs-name, $fs-value in $font-sizes {
+  .fs-#{$fs-name} {
+    font-size: $fs-value;
+  }
+}
+
+@each $fw-name, $fw-value in $font-weights {
+  .fw-#{$fw-name} {
+    font-weight: $fw-value;
+  }
+}
+
+@each $ff-name, $ff-value in $font-families {
+  .ff-#{$ff-name} {
+    font-family: $ff-value;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.page-title {
+  font-size: clamp(3rem, 6vw, #{get-font-size(900)});
+  font-family: get-font-family(500);
+}

@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+.primary-button {
+  cursor: pointer;
+  display: inline-flex;
+  border: 0;
+  font-weight: get-font-weight(700);
+  text-transform: uppercase;
+  padding: 1em 2em;
+
+  &[href] {
+    text-decoration: none;
+  }
+
+  &[data-variant="filled"] {
+    color: get-clr-shade(neutral, 700);
+    background-color: get-clr-shade(primary, 400);
+  }
+
+  &[data-variant="outlined"] {
+    --_outline-width: 4px;
+
+    color: get-clr-shade(neutral, 100);
+    outline: var(--_outline-width) solid currentColor;
+    outline-offset: calc(var(--_outline-width) * -1);
+  }
+}

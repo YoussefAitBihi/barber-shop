@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "breakpoints" as *;
+
+@mixin mq($breakpoint, $condition: min) {
+  $entered-breakpoint: "";
+
+  @if (meta.type-of($breakpoint) == string) {
+    @if (map.has-key($breakpoints, $breakpoint) == false) {
+      @error "The breakpoint must be either #{map.keys($breakpoints)}";
+    }
+
+    $entered-breakpoint: map.get($breakpoints, $breakpoint);
+  } @else if (meta.type-of($breakpoint) == number) {
+    @if (math.is-unitless($breakpoint)) {
+      @error "The breakpoint you entered is unitless. The breakpoint should be prefixed with `em` unit";
+    }
+
+    @if ($breakpoint < 20em or $breakpoint > 70em) {
+      @error "The breakpoint must be between 20em and 70em";
+    }
+
+    $entered-breakpoint: $breakpoint;
+  } @else {
+    @error "The breakpoint must be either string or number. You entered: #{$breakpoint}";
+  }
+
+  @if ($condition != max and $condition != min) {
+    @error "The condition must either min or max";
+  }
+
+  @media (#{$condition}-width: $entered-breakpoint) {
+    @content;
+  }
+}

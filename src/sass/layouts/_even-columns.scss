@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+.even-columns {
+  --_even-columns-gap: #{get-size(24)};
+
+  display: grid;
+  gap: var(--_even-columns-gap);
+
+  &[data-type="gap-wide"] {
+    --_even-columns-gap: #{get-size(48)};
+  }
+
+  @include mq(mobile) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}

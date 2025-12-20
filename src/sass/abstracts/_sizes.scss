@@ -1,0 +1,26 @@
+$sizes: (
+  320: 20rem,
+  160: 10rem,
+  112: 7rem,
+  87: 5.4375rem,
+  80: 5rem,
+  50: 3.125rem,
+  48: 3rem,
+  36: 2.25rem,
+  32: 2rem,
+  24: 1.5rem,
+  16: 1rem,
+  8: 0.5rem,
+  4: 0.25rem,
+  0: 0rem,
+);
+
+$padding-section-hero: get-size(320);
+$padding-sections: get-size(112);
+
+$container-max-width: 77.75rem;
+$container-max-width-wide: 101.5625rem;
+
+$container-padding: 2rem;
+
+$nav-link-gap: get-size(48);

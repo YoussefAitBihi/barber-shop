@@ -1,0 +1,78 @@
+@use "sass:map";
+@use "sass:string";
+@use "sass:meta";
+
+@use "colors" as *;
+@use "sizes" as *;
+@use "typography" as *;
+
+/// Allow to get a shade of a color, or throw an error if it doesn't exist
+/// @param {string} $color - The color
+/// @param {string} $shade - The Shade
+/// @return {color} Return a color
+@function get-clr-shade($color, $shade) {
+  @if (map.has-key($colors, $color) == false) {
+    @error "The color you entered `#{$color}` doesn't exist in the design system. #{colors}";
+  }
+
+  @if (map.has-key($colors, $color, $shade) == false) {
+    @error "The shade you entered `#{$shade}` doesn't exist in the design system.";
+  }
+
+  @return map.get($colors, $color, $shade);
+}
+
+/// Gets a size value from the design system's size map.
+///
+/// @param {number} $size - The name of the size to retrieve from the $sizes map
+/// @return {*} The size value associated with the provided size name
+/// @throw Error if the provided size name doesn't exist in the $sizes map
+/// @example
+///   $padding: get-size('medium'); // Returns the medium size value from $sizes map
+@function get-size($size) {
+  @if (meta.type-of($size) == string) {
+    @error "The size must be a number not a string.";
+  }
+
+  @if (map.has-key($sizes, $size) == false) {
+    @error "The size you entered doesn't exist in the design system. You can use either";
+  }
+
+  @return map.get($sizes, $size);
+}
+
+@function get-font-family($ff) {
+  @if (meta.type-of($ff) == string) {
+    @error "The font family must be a number not a string.";
+  }
+
+  @if (map.has-key($font-families, $ff) == false) {
+    @error "The font family you entered doesn't exist in the design system. You can use either";
+  }
+
+  @return map.get($font-families, $ff);
+}
+
+@function get-font-size($fs) {
+  @if (meta.type-of($fs) == string) {
+    @error "The font size must be a number not a string.";
+  }
+
+  @if (map.has-key($font-sizes, $fs) == false) {
+    @error "The font size you are looking for doesn't exist in the design system. You can use either";
+  }
+
+  @return map.get($font-sizes, $fs);
+}
+
+@function get-font-weight($fw) {
+  @if (meta.type-of($fw) == string) {
+    @error "The font weight be must a number not a string.";
+  }
+
+  @if (map.has-key($font-weights, $fw) == false) {
+    @error "The font weight you are looking for doesn't exist in the design system. You can use either";
+  }
+
+  @return map.get($font-weights, $fw);
+}

@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.flex-group {
+  display: flex;
+  gap: var(--flex-group-gap, get-size(16));
+  flex-wrap: wrap;
+}
+
+.flex-group.flex-x-centered {
+  justify-content: center;
+}

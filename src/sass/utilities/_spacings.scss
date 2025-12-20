@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+
+.flow > *:where(:not(:first-child)) {
+  margin-block-start: var(--flow-spacer, get-size(24));
+}
+
+@each $size-name, $size-value in $sizes {
+  .margin {
+    &-#{$size-name} {
+      margin: $size-value;
+    }
+
+    &-inline-#{$size-name} {
+      margin-inline: $size-value;
+    }
+    &-inline-start-#{$size-name} {
+      margin-inline-start: $size-value;
+    }
+    &-inline-end-#{$size-name} {
+      margin-inline-end: $size-value;
+    }
+
+    &-block-#{$size-name} {
+      margin-block: $size-value;
+    }
+    &-block-start-#{$size-name} {
+      margin-block-start: $size-value;
+    }
+    &-block-end-#{$size-name} {
+      margin-block-end: $size-value;
+    }
+  }
+  .padding {
+    &-#{$size-name} {
+      padding: $size-value;
+    }
+
+    &-inline-#{$size-name} {
+      padding-inline: $size-value;
+    }
+    &-inline-start-#{$size-name} {
+      padding-inline-start: $size-value;
+    }
+    &-inline-end-#{$size-name} {
+      padding-inline-end: $size-value;
+    }
+
+    &-block-#{$size-name} {
+      padding-block: $size-value;
+    }
+    &-block-start-#{$size-name} {
+      padding-block-start: $size-value;
+    }
+    &-block-end-#{$size-name} {
+      padding-block-end: $size-value;
+    }
+  }
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.section {
+  --_section-padding: clamp(#{get-size(80)}, 8vw + 0.75rem, #{get-size(112)});
+  padding-block: var(--_section-padding);
+
+  &[data-type="hero"] {
+    --_section-padding: clamp(calc(#{get-size(160)} + 3rem), 24vw + 0.19rem, #{get-size(320)});
+  }
+}
