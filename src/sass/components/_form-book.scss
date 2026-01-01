@@ -17,6 +17,10 @@
     padding: $form-book-input-padding;
     border: $form-book-input-border;
     border-radius: $form-book-input-border-radius;
+
+    &:focus-visible {
+      outline-color: $form-book-input-outline-focus;
+    }
   }
 
   .primary-button {
