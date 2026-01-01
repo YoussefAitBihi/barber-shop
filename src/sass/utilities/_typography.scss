@@ -1,21 +1,28 @@
 @use "../abstracts" as *;
 
-@each $fs-name, $fs-value in $font-sizes {
-  .fs-#{$fs-name} {
-    font-size: $fs-value;
+@each $screen-size, $fs-map in $font-sizes {
+  @each $fs-name, $fs-value in $fs-map {
+    .fs-#{$fs-name} {
+      font-size: var(--fs-#{$fs-name});
+    }
   }
 }
 
-@each $fw-name, $fw-value in $font-weights {
-  .fw-#{$fw-name} {
-    font-weight: $fw-value;
-  }
+.ff-primary {
+  font-family: $font-family-primary;
+}
+.ff-accent {
+  font-family: $font-family-accent;
 }
 
-@each $ff-name, $ff-value in $font-families {
-  .ff-#{$ff-name} {
-    font-family: $ff-value;
-  }
+.fw-regular {
+  font-weight: $font-weight-base;
+}
+.fw-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
+.fw-bold {
+  font-weight: $font-weight-bold;
 }
 
 .text-center {
@@ -25,12 +32,17 @@
 .text-uppercase {
   text-transform: uppercase;
 }
+.letter-spacing-loose {
+  letter-spacing: $letter-spacing-loose;
+}
 
 .no-decoration {
   text-decoration: none;
 }
 
-.page-title {
-  font-size: clamp(3rem, 6vw, #{get-font-size(900)});
-  font-family: get-font-family(500);
+.heading-900 {
+  @include section-header(h1);
+}
+.heading-800 {
+  @include section-header(h2);
 }

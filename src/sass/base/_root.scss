@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+:root {
+  @each $color, $shade-map in $colors {
+    @each $shade-name, $shade-value in $shade-map {
+      --#{$color}-#{$shade-name}: #{$shade-value};
+    }
+  }
+
+  @each $screen-size, $fs-map in $font-sizes {
+    @if ($screen-size == mobile) {
+      @each $fs-name, $fs-value in $fs-map {
+        --fs-#{$fs-name}: #{$fs-value};
+      }
+    } @else {
+      @include mq($screen-size) {
+        @each $fs-name, $fs-value in $fs-map {
+          --fs-#{$fs-name}: #{$fs-value};
+        }
+      }
+    }
+  }
+
+  --nav-link-gap: #{$nav-link-gap};
+  --buttons-group-gap: #{$buttons-group-gap};
+  --schedule-gap: #{$schedule-gap};
+  --even-columns-gap-1: #{$even-columns-gap-1};
+  --auto-fit-gap-1: #{$auto-fit-gap-1};
+
+  --flow-spacer-1: #{$flow-spacer-1};
+  --flow-spacer-2: #{$flow-spacer-2};
+}

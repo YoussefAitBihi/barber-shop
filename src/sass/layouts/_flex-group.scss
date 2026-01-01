@@ -1,11 +1,15 @@
 @use "../abstracts" as *;
 
 .flex-group {
+  --_flex-group-gap: $size-4 $size-5;
+
   display: flex;
-  gap: var(--flex-group-gap, get-size(16));
+  gap: var(--_flex-group-gap);
   flex-wrap: wrap;
 }
 
 .flex-group.flex-x-centered {
-  justify-content: center;
+  @include mq(mobile, max) {
+    justify-content: center;
+  }
 }

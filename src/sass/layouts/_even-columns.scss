@@ -1,17 +1,17 @@
 @use "../abstracts/" as *;
 
 .even-columns {
-  --_even-columns-gap: #{get-size(24)};
+  --_even-columns-gap: #{$even-columns-gap-1};
 
   display: grid;
   gap: var(--_even-columns-gap);
 
-  &[data-type="gap-wide"] {
-    --_even-columns-gap: #{get-size(48)};
-  }
-
-  @include mq(mobile) {
+  @include mq(mobile, min) {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+
+    &.aligned-y {
+      align-items: center;
+    }
   }
 }

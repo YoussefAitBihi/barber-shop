@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+
+.section-schedule {
+  background-color: $section-schedule-background-color;
+  text-align: $section-schedule-text-alignment;
+  padding-block: $section-schedule-padding-block;
+
+  & .flex-group {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+.form-book {
+  &__group {
+    display: $form-book-group-display;
+    flex-direction: $form-book-group-items-direction;
+    gap: $form-book-group-gap;
+    font-size: $form-book-group-font-size;
+  }
+
+  &__label {
+    font-weight: $form-book-label-font-weight;
+  }
+
+  &__input {
+    background-color: $form-book-input-background-color;
+    padding: $form-book-input-padding;
+    border: $form-book-input-border;
+    border-radius: $form-book-input-border-radius;
+  }
+
+  .primary-button {
+    margin-block-start: $size-6;
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+}

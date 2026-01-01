@@ -1,19 +1,12 @@
-@use "../abstracts/functions" as *;
-@use "../abstracts/typography" as *;
+@use "../abstracts/" as *;
 
 body {
-  min-height: 100dvh;
-  font-family: get-font-family(400);
-  font-size: get-font-size(400);
-  font-weight: get-font-weight(400);
-  color: get-clr-shade(neutral, 700);
-  background-color: get-clr-shade(neutral, 100);
-  line-height: 1.5;
-}
-
-.main-content {
-  height: 100dvh;
-  display: grid;
-  place-items: center;
-  text-align: center;
+  min-height: $body-min-height;
+  min-height: 100vh;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  color: $body-color;
+  background-color: $body-background-color;
 }

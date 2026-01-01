@@ -1,0 +1,153 @@
+@use "typography" as *;
+@use "colors" as *;
+@use "sizes" as *;
+@use "border-radius" as *;
+@use "box-shadows" as *;
+
+/* ------------------------ */
+/*          LAYOUT          */
+/* ------------------------ */
+$container-max-width-narrow: 39.375rem;
+$container-max-width-wide: 64.0625rem;
+$container-max-width-full-bleed: 100%;
+
+$container-padding-inline: $size-8;
+
+/* ------------------------ */
+/*          SPACING         */
+/* ------------------------ */
+$section-padding-block: clamp($size-12, 18vh, $size-13);
+$header-padding-block: $size-8;
+
+$nav-link-gap: $size-4 $size-9;
+$buttons-group-gap: $size-5;
+$schedule-gap: $size-6 0;
+$even-columns-gap-1: clamp($size-5, 5vh, $size-10);
+$auto-fit-gap-1: $size-7;
+
+$flow-spacer-1: 1.3rem;
+$flow-spacer-2: 3.75rem;
+
+/* ------------------------ */
+/*        TYPOGRAPHY        */
+/* ------------------------ */
+$text-default-size: $font-size-600;
+$letter-spacing-loose: 0.16em;
+
+/* ------------------------ */
+/*           BODY           */
+/* ------------------------ */
+$body-min-height: 100dvh;
+$body-font-family: $font-family-primary;
+$body-font-size: $font-size-600;
+$body-font-weight: $font-weight-base;
+$body-line-height: 1.5;
+$body-color: $color-primary-800;
+$body-background-color: $color-neutral-100;
+
+/* ------------------------ */
+/*          BUTTONS         */
+/* ------------------------ */
+$button-primary-font-family: $font-family-primary;
+$button-primary-font-size: $body-font-size;
+$button-primary-font-weight: $font-weight-bold;
+$button-primary-color: $color-neutral-100;
+$button-primary-background-color: $color-primary-700;
+$button-primary-padding: 0.75em 2em;
+$button-primary-text-transform: capitalize;
+$button-primary-border-radius: $size-2;
+
+$button-primary-accent-background-color: $color-accent-600;
+$button-primary-background-color-hover: $color-primary-800;
+$button-primary-accent-background-color-hover: $color-accent-800;
+
+/* ------------------------ */
+/*      PRIMARY HEADER      */
+/* ------------------------ */
+$primary-header-font-family: $font-family-accent;
+$primary-header-background-color: $color-primary-800;
+$primary-header-color: $color-neutral-100;
+$primary-header-padding-block: $header-padding-block;
+$primary-header-text-transform: uppercase;
+$primary-header-letter-spacing: $letter-spacing-loose;
+$primary-header-display: grid;
+$primary-header-row-gap: $size-7;
+$primary-header-navigation-alignment: end;
+
+$primary-header-logo-font-size: $font-size-500;
+$primary-header-logo-color: $color-primary-500;
+
+/* ------------------------ */
+/*    PRIMARY NAVIGATION    */
+/* ------------------------ */
+$primary-navigation-link-font-size: $font-size-400;
+$primary-navigation-link-font-weight: $font-weight-bold;
+$primary-navigation-link-color: $color-neutral-100;
+$primary-navigation-link-color-hover: $color-accent-600;
+
+/* ------------------------ */
+/*        CARD SERVICE      */
+/* ------------------------ */
+$card-service-background-color: $color-primary-200;
+$card-service-padding: $size-8;
+$card-service-border-radius: $border-radius-1;
+$card-service-box-shadow: $box-shadow-1;
+$card-service-title-font-family: $font-family-accent;
+$card-service-title-font-size: $font-size-600;
+$card-service-title-font-weight: $font-weight-bold;
+$card-service-title-text-transform: uppercase;
+$card-service-title-letter-spacing: $letter-spacing-loose;
+$card-service-title-margin-block-end: $size-2;
+$card-service-paragraph-font-size: $font-size-400;
+$card-service-paragraph-color: $color-primary-700;
+
+/* ------------------------ */
+/*       SECTION HOURS      */
+/* ------------------------ */
+$section-schedule-background-color: $color-primary-200;
+$section-schedule-text-alignment: center;
+$section-schedule-padding-block: $section-padding-block;
+
+/* ------------------------ */
+/*       SCHEDULE ITEM      */
+/* ------------------------ */
+$schedule-item-padding-inline: $size-8;
+$schedule-item-day-font-family: $font-family-accent;
+$schedule-item-day-font-size: $font-size-700;
+$schedule-item-day-font-weight: $font-weight-bold;
+$schedule-item-day-letter-spacing: $letter-spacing-loose;
+$schedule-item-day-text-transform: uppercase;
+$schedule-item-day-color: $color-primary-600;
+
+/* ------------------------ */
+/*     CUT CATEGORY LIST    */
+/* ------------------------ */
+$cut-category-font-family: $font-family-accent;
+$cut-category-font-weight: $font-weight-bold;
+$cut-category-text-transform: uppercase;
+$cut-category-display: grid;
+$cut-category-columns-count: 2;
+$cut-category-column-width: 1fr;
+$cut-category-gap: $size-10;
+
+$cut-category-title-font-size: $font-size-700;
+$cut-category-title-letter-spacing: $letter-spacing-loose;
+$cut-category-title-color: $color-primary-600;
+$cut-category-title-line-height: 1.1;
+$cut-category-price-font-size: $font-size-600;
+$cut-category-price-color: $color-primary-700;
+
+/* ------------------------ */
+/*         FORM BOOK        */
+/* ------------------------ */
+$form-book-group-display: flex;
+$form-book-group-items-direction: column;
+$form-book-group-gap: $size-1;
+$form-book-group-font-size: $font-size-400;
+
+$form-book-label-font-weight: $font-weight-semi-bold;
+
+$form-book-input-background-color: $color-neutral-100;
+$form-book-input-padding: 0.81em;
+$form-book-input-border: 3px solid $color-primary-300;
+$form-book-input-border-radius: 8px;

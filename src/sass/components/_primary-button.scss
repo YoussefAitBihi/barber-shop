@@ -4,24 +4,28 @@
   cursor: pointer;
   display: inline-flex;
   border: 0;
-  font-weight: get-font-weight(700);
-  text-transform: uppercase;
-  padding: 1em 2em;
+  font-family: $button-primary-font-family;
+  font-size: $button-primary-font-size;
+  font-weight: $button-primary-font-weight;
+  color: $button-primary-color;
+  background-color: var(--_primary-button-bg);
+  text-transform: $button-primary-text-transform;
+  padding: $button-primary-padding;
+  border-radius: $button-primary-border-radius;
+  transition: background-color 300ms;
 
-  &[href] {
-    text-decoration: none;
+  &[data-variant="primary"] {
+    --_primary-button-bg: #{$button-primary-background-color};
+
+    &:is(:hover, :focus-visible) {
+      --_primary-button-bg: #{$button-primary-background-color-hover};
+    }
   }
+  &[data-variant="accent"] {
+    --_primary-button-bg: #{$button-primary-accent-background-color};
 
-  &[data-variant="filled"] {
-    color: get-clr-shade(neutral, 700);
-    background-color: get-clr-shade(primary, 400);
-  }
-
-  &[data-variant="outlined"] {
-    --_outline-width: 4px;
-
-    color: get-clr-shade(neutral, 100);
-    outline: var(--_outline-width) solid currentColor;
-    outline-offset: calc(var(--_outline-width) * -1);
+    &:is(:hover, :focus-visible) {
+      --_primary-button-bg: #{$button-primary-accent-background-color-hover};
+    }
   }
 }

@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+.cut-category {
+  display: $cut-category-display;
+  gap: $cut-category-gap;
+
+  font-family: $cut-category-font-family;
+  font-weight: $cut-category-font-weight;
+  text-transform: $cut-category-text-transform;
+
+  &__title {
+    font-size: $cut-category-title-font-size;
+    color: $cut-category-title-color;
+    letter-spacing: $cut-category-title-letter-spacing;
+    line-height: $cut-category-title-line-height;
+  }
+
+  &__price {
+    color: $cut-category-price-color;
+    font-size: $cut-category-title-font-size;
+  }
+
+  @include mq(mobile, min) {
+    grid-template-columns: repeat($cut-category-columns-count, $cut-category-column-width);
+  }
+}

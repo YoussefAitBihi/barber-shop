@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+.card-service {
+  background-color: $card-service-background-color;
+  padding: $card-service-padding;
+  border-radius: $card-service-border-radius;
+
+  &__title {
+    font-family: $card-service-title-font-family;
+    font-size: $card-service-title-font-size;
+    font-weight: $card-service-title-font-weight;
+    text-transform: $card-service-title-text-transform;
+    letter-spacing: $card-service-title-letter-spacing;
+    margin-block-end: $card-service-title-margin-block-end;
+
+    & + p {
+      font-size: $card-service-paragraph-font-size;
+      color: $card-service-paragraph-color;
+    }
+  }
+}

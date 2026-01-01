@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+.primary-navigation {
+  &__link {
+    color: $primary-navigation-link-color;
+    font-size: $primary-navigation-link-font-size;
+    $font-weight: $primary-navigation-link-font-weight;
+
+    &:is(:hover, :focus-visible) {
+      color: $primary-navigation-link-color-hover;
+    }
+  }
+
+  @include mq(mobile, max) {
+    &__list {
+      justify-content: center;
+    }
+  }
+}

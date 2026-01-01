@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+.schedule-item {
+  padding-inline: $schedule-item-padding-inline;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "\007C";
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    // display: none;
+    right: 0;
+  }
+
+  &:last-of-type {
+    &::after {
+      display: block;
+    }
+  }
+
+  &__day {
+    font-family: $schedule-item-day-font-family;
+    font-size: $schedule-item-day-font-size;
+    font-weight: $schedule-item-day-font-weight;
+    letter-spacing: $schedule-item-day-letter-spacing;
+    text-transform: $schedule-item-day-text-transform;
+    color: $schedule-item-day-color;
+  }
+}

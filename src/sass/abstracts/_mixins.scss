@@ -3,6 +3,9 @@
 @use "sass:math";
 
 @use "breakpoints" as *;
+@use "typography" as *;
+@use "colors" as *;
+@use "tokens" as *;
 
 @mixin mq($breakpoint, $condition: min) {
   $entered-breakpoint: "";
@@ -33,5 +36,24 @@
 
   @media (#{$condition}-width: $entered-breakpoint) {
     @content;
+  }
+}
+
+@mixin section-header($heading-level) {
+  --_fs-section-header: var(--fs-800);
+
+  font-family: $font-family-accent;
+  font-size: var(--_fs-section-header);
+  font-weight: $font-weight-bold;
+  line-height: 1.1;
+  color: $color-accent-600;
+  text-transform: uppercase;
+
+  @if ($heading-level == h1) {
+    --_ff-section-header: var(--fs-900);
+  }
+
+  @if ($heading-level == h2) {
+    letter-spacing: $letter-spacing-loose;
   }
 }

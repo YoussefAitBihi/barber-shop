@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+.section-hero {
+  @include mq(mobile, max) {
+    text-align: center;
+
+    &__picture-box {
+      justify-self: center;
+    }
+  }
+
+  @include mq(mobile, min) {
+    &__picture {
+      justify-self: end;
+    }
+  }
+}

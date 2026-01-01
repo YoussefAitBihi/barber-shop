@@ -4,13 +4,226 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website-starter-template</title>
+    <title>Barber Shop</title>
 
     <link rel="stylesheet" href="src/sass/main.scss" />
   </head>
   <body>
-    <div class="container">
-      <h1>Hello World</h1>
-    </div>
+    <header class="primary-header">
+      <div class="container" data-type="wide">
+        <div class="primary-header__content">
+          <a class="primary-header__logo" href="#!">the barber shop</a>
+          <nav class="primary-navigation">
+            <ul
+              class="primary-navigation__list | flex-group"
+              role="list"
+              style="--_flex-group-gap: var(--nav-link-gap)"
+            >
+              <li><a class="primary-navigation__link" href="#about-us">about us</a></li>
+              <li><a class="primary-navigation__link" href="#hours">hours</a></li>
+              <li><a class="primary-navigation__link" href="#prices">prices</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main-content">
+      <section
+        class="section-hero | section-padding-block bg-primary-200"
+        aria-labelledby="hero-title"
+      >
+        <div class="container" data-type="wide">
+          <div class="even-columns aligned-y">
+            <div class="flow">
+              <h1 class="heading-900" id="hero-title">the barber shop</h1>
+              <p>
+                Established over a decade ago, <span class="fw-bold">The Barber Shop</span> is here
+                to serve you're hair needs, whatever they are. From a simple cut, a beard trim or a
+                hot towel shave, we're here to help you with.
+              </p>
+              <div
+                class="flex-group flex-x-centered"
+                style="--_flex-group-gap: var(--buttons-group-gap)"
+              >
+                <a class="primary-button" data-variant="accent">Book appointment</a>
+                <a class="primary-button" data-variant="primary">View prices</a>
+              </div>
+            </div>
+            <div class="section-hero__picture-box">
+              <img
+                class="section-hero__picture | border-radius-2 box-shadow-2"
+                src="assets/hair-cut.jpg"
+                alt="A barker works with a client"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-primary-300 section-padding-block text-center"
+        aria-labelledby="services-title"
+      >
+        <div class="container" data-type="wide">
+          <div class="flow" style="--_flow-spacer: var(--flow-spacer-2)">
+            <h2 class="heading-800" id="services-title">our services</h2>
+            <div class="grid-auto-fit">
+              <div class="card-service">
+                <h3 class="card-service__title">hair cutting</h3>
+                <p>A quick clean up or a totally new style, we have you covered.</p>
+              </div>
+              <div class="card-service">
+                <h3 class="card-service__title">hair cutting</h3>
+                <p>A quick clean up or a totally new style, we have you covered.</p>
+              </div>
+              <div class="card-service">
+                <h3 class="card-service__title">hair cutting</h3>
+                <p>A quick clean up or a totally new style, we have you covered.</p>
+              </div>
+              <div class="card-service">
+                <h3 class="card-service__title">hair cutting</h3>
+                <p>A quick clean up or a totally new style, we have you covered.</p>
+              </div>
+              <div class="card-service">
+                <h3 class="card-service__title">hair cutting</h3>
+                <p>A quick clean up or a totally new style, we have you covered.</p>
+              </div>
+              <div class="card-service">
+                <h3 class="card-service__title">hair cutting</h3>
+                <p>A quick clean up or a totally new style, we have you covered.</p>
+              </div>
+            </div>
+            <a class="primary-button" data-variant="accent">book appointment</a>
+          </div>
+        </div>
+      </section>
+      <section class="section-schedule" aria-labelledby="hours-title">
+        <div class="container" data-type="full-bleed">
+          <div
+            class="section-schedule__content | flow"
+            style="--_flow-spacer: var(--flow-spacer-2)"
+          >
+            <header class="flow" style="--_flow-spacer: var(--flow-spacer-1)">
+              <h2 class="heading-800" id="hours-title">hours</h2>
+              <p>Open 7 days a week to serve your hair cutting needs</p>
+            </header>
+            <ul class="flex-group" role="list" style="--_flex-group-gap: var(--schedule-gap)">
+              <li class="schedule-item">
+                <p class="schedule-item__day">mon</p>
+                <p class="schedule-item__time">09:00 - 18:00</p>
+              </li>
+              <li class="schedule-item">
+                <p class="schedule-item__day">tue</p>
+                <p class="schedule-item__time">09:00 - 18:00</p>
+              </li>
+              <li class="schedule-item">
+                <p class="schedule-item__day">wed</p>
+                <p class="schedule-item__time">09:00 - 18:00</p>
+              </li>
+              <li class="schedule-item">
+                <p class="schedule-item__day">thu</p>
+                <p class="schedule-item__time">09:00 - 18:00</p>
+              </li>
+              <li class="schedule-item">
+                <p class="schedule-item__day">fri</p>
+                <p class="schedule-item__time">10:00 - 12:00</p>
+              </li>
+              <li class="schedule-item">
+                <p class="schedule-item__day">sat</p>
+                <p class="schedule-item__time">09:00 - 18:00</p>
+              </li>
+              <li class="schedule-item">
+                <p class="schedule-item__day">sun</p>
+                <p class="schedule-item__time">10:00 - 18:00</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-pricing | bg-primary-300 section-padding-block text-center"
+        aria-labelledby="pricing-title"
+      >
+        <div class="container" data-type="narrow">
+          <div class="section-pricing__content | flow" style="--_flow-spacer: var(--flow-spacer-2)">
+            <h2 class="heading-800" id="pricing-title">pricing</h2>
+            <ul
+              class="cut-category"
+              role="list"
+            >
+              <li>
+                <h3 class="cut-category__title">Adult cut</h3>
+                <p class="cut-category__price">$15</p>
+              </li>
+              <li>
+                <h3 class="cut-category__title" clr-primary-600">Beard trim</h3>
+                <p class="cut-category__price">$30</p>
+              </li>
+              <li>
+                <h3 class="cut-category__title">kid cut</h3>
+                <p class="cut-category__price">$10</p>
+              </li>
+              <li>
+                <h3 class="cut-category__title">How towel shave</h3>
+                <p class="cut-category__price">$25</p>
+              </li>
+              <li>
+                <h3 class="cut-category__title">Cut & wash</h3>
+                <p class="cut-category__price">$40</p>
+              </li>
+              <li>
+                <h3 class="cut-category__title">head & beard</h3>
+                <p class="cut-category__price">$20</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section-book | bg-primary-200 section-padding-block" aria-labelledby="book-title">
+        <div class="container" data-type="narrow">
+          <div class="section-book__content | flow" style="--_flow-spacer: var(--flow-spacer-2)">
+            <header class="text-center flow" style="--_flow-spacer: var(--flow-spacer-1)">
+              <h2 class="heading-800" id="book-title">book an appointment</h2>
+              <p>Please fill out the form below to book your appointment</p>
+            </header>
+            <form class="form-book grid-auto-fit" method="POST" style="--_auto-fit-gap: .5rem 1.8rem">
+              <div class="form-book__group">
+                <label class="form-book__label" for="name">Your name</label>
+                <input class="form-book__input" type="text" placeholder="John Doe" id="name" required />
+              </div>
+              <div class="form-book__group">
+                <label class="form-book__label" for="email">E-mail address</label>
+                <input class="form-book__input" type="email" placeholder="johndoe@gmail.com" id="email" required />
+              </div>
+              <div class="form-book__group">
+                <label class="form-book__label" for="date">Date</label>
+                <input class="form-book__input" type="date" placeholder="mm/dd/yyyy" id="date" required />
+              </div>
+              <div class="form-book__group">
+                <label class="form-book__label" for="phone">Phone number</label>
+                <input class="form-book__input" type="tel" placeholder="555-555-555" id="phone" required />
+              </div>
+              <div class="form-book__group">
+                <label class="form-book__label" for="service">Select service</label>
+                <input class="form-book__input" type="text" placeholder="Hair cut" id="service" required />
+              </div>
+              <div class="form-book__group">
+                <label class="form-book__label" for="barber-name">Barber name <span class="fw-regular">(optional)</span></label>
+                <input class="form-book__input" type="text" placeholder="John Doe" id="barber-name" />
+              </div>
+              <button class="primary-button" data-variant="accent">Book appointment</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary-800 clr-primary-500 text-center padding-block-8">
+      <div class="container" data-type="narrow">
+        <div class="ff-accent flow" style="--_flow-spacer: 1rem">
+          <p class="fs-500 text-uppercase letter-spacing-loose">the barber shop</p>
+          <p class="ff-primary fs-400">Here to serve your hair needs, whatever they might be</p>
+          <a class="fs-400 clr-neutral-100 fw-bold letter-spacing-loose" href="#!">555-555-555</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

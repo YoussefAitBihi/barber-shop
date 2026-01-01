@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .flow > *:where(:not(:first-child)) {
-  margin-block-start: var(--flow-spacer, get-size(24));
+  margin-block-start: var(--_flow-spacer, $flow-spacer-1);
 }
 
 @each $size-name, $size-value in $sizes {
@@ -61,11 +61,9 @@
   margin-inline: auto;
 }
 
-.section {
-  --_section-padding: clamp(#{get-size(80)}, 8vw + 0.75rem, #{get-size(112)});
-  padding-block: var(--_section-padding);
-
-  &[data-type="hero"] {
-    --_section-padding: clamp(calc(#{get-size(160)} + 3rem), 24vw + 0.19rem, #{get-size(320)});
-  }
+.section-padding-block {
+  padding-block: $section-padding-block;
+}
+.header-padding-block {
+  padding-block: $header-padding-block;
 }

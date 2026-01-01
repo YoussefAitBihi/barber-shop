@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.primary-header {
+  font-family: $primary-header-font-family;
+  color: $primary-header-color;
+  background-color: $primary-header-background-color;
+  padding-block: $primary-header-padding-block;
+  text-transform: $primary-header-text-transform;
+  letter-spacing: $primary-header-letter-spacing;
+
+  &__content {
+    display: $primary-header-display;
+    row-gap: $primary-header-row-gap;
+  }
+
+  &__logo {
+    font-size: $primary-header-logo-font-size;
+    color: $primary-header-logo-color;
+  }
+
+  @include mq(mobile, max) {
+    text-align: center;
+  }
+
+  @include mq(mobile, min) {
+    &__content {
+      grid-auto-flow: column;
+    }
+  }
+}
+@include mq(mobile) {
+  .primary-navigation {
+    justify-self: $primary-header-navigation-alignment;
+  }
+}
